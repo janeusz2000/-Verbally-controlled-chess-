@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+task to do:
+- napisaæ slownik dla ruchów
+- narysowac gui w pygame i wczytywanie calej grafiki na podstawie wirtualnej szachownicy
+- napisac funcjonalnosc ktora spowoduje, ze sprawdzimy czy komenda glosowa zostala zatwierdzona czy nie
+- sprawdzic jak z do³¹czonego kodu z upelu wyslac utworzony string na podstawie mowy do innej klasy
+- zrobic nasluchiwanie komend przez grê
+- zrobiæ ropoznawanie, ¿e jest szach lub mat z komunikatem
+
+
+dotakowe z gwiazdk¹:
+- zaimplementowac silnik dostarczony do biblioteki i sprawic ze bedzie gralo z czarnymi
+- funkcjonalnosc "E4 pokaz dostepne ruchy"
+=======
+task to do:
+- napisaæ slownik dla ruchów
+- narysowac gui w pygame i wczytywanie calej grafiki na podstawie wirtualnej szachownicy
+- napisac funcjonalnosc ktora spowoduje, ze sprawdzimy czy komenda glosowa zostala zatwierdzona czy nie
+- sprawdzic jak z do³¹czonego kodu z upelu wyslac utworzony string na podstawie mowy do innej klasy
+- zrobic nasluchiwanie komend przez grê
+- zrobiæ ropoznawanie, ¿e jest szach lub mat z komunikatem
+
+
+dotakowe z gwiazdk¹:
+- zaimplementowac silnik dostarczony do biblioteki i sprawic ze bedzie gralo z czarnymi
+- funkcjonalnosc "E4 pokaz dostepne ruchy"
+>>>>>>> d269694eea858310c264b6adf698d61bfd150415
+- zaimplementowanie komend glosowych menu typu "zakoñcz grê", "graj od nowa" "cofnij ruch"

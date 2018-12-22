@@ -1,4 +1,4 @@
-"""this program is rensponsible for graphic representation of current chess board"""
+"""this program is responsible for graphic representation of current chess board"""
 import pygame
 import sys
 import ChessEngine

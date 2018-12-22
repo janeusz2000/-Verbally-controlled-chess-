@@ -23,8 +23,7 @@ class Commander(object):
             self.gui_.check_events()
             self.gui_.update_screen()
 
-
-            self.gui_.read_game(chess_board=self.chess_engine_)
+            self.gui_.read_game(chess_board=self.chess_engine_) # TO DO
 
             # =====================================
 

@@ -14,7 +14,8 @@ class GUI(object):
 
     def read_game(self, chess_board):
 
-        # TO DO
+        chess_board_temp = chess_board
+
 
         pass
 

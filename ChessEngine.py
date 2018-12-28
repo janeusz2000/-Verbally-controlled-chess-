@@ -19,8 +19,8 @@ class ChessEngine:
     def move(self):
         if self.manual_input_:
             print(self.board_.legal_moves)
-            move = chess.Move.from_uci(input("Please make a move "))
-            self.board_.push(move=move)
+            # move = input("Please make a move")
+            self.board_.push_san(input("Please make a move"))
 
     def console_view(self):
         print(self.board_)

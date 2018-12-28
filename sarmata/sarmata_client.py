@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 from argparse import ArgumentParser
 from service.sarmata_settings import SarmataSettings
 from service.sarmata_recognize import SarmataRecognizer

@@ -14,7 +14,8 @@ def print_results(responses, stream):
     if responses is None:
         print("Empty results - None object")
         return
-
+    results_speech = []
+    results_rr = []
     for response in responses:
         if response is None:
             print("Empty results - skipping response")
@@ -37,7 +38,10 @@ def print_results(responses, stream):
         for res in response.results:
             transcript = " ".join([word.transcript for word in res.words])
             print("[{}.] {} /{}/ ({})".format(n, transcript, res.semantic_interpretation, res.confidence))
+            results_speech.append(transcript)
+            results_rr.append(res.confidence)
             n += 1
+    return [results_speech, results_rr]
 
 
 def validate_recognition_settings(settings):

@@ -1,0 +1,19 @@
+    def move(self):
+        if self.manual_input_:
+            print(self.board_.legal_moves)
+
+            # move = input("Please make a move")
+            converter = ChessConverter.ChessConverter()
+            print("Please make a move:")
+            while True:#making a loop
+                try: #used try so that if user pressed other than the given key error will not be shown
+                    if keyboard.is_pressed('space'):
+                        result = Listener.Listener.listen()
+                        break#finishing theloopq
+                    else:
+                        pass
+                except:
+                    break  # if user pressed a key other than the given key the loop will break
+
+            move = converter.convert(result)
+            self.board_.push_san(move)

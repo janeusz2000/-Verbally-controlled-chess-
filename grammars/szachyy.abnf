@@ -4,12 +4,17 @@ mode voice;
 root $root;
 tag-format <semantics/1.0-literals>;
 
-$root = $ruch | $roszada | $end ;
+$root = $ruch | $roszada | $end | $możliwe_ruchy;
 
-$ruch = $figura $naco $corobi $naco;
+$ruch = $polozenie_figury $corobi $pole;
+$możliwe_ruchy = pokaż [mi] $jakie ruchy dla $opcje;
+$jakie = możliwe | dostępne | dopuszczalne ;
+$opcje = ($polozenie_figury | $pole);
+$polozenie_figury = $figura $pole | $figura_dopełniacz na $pole | $figura_dopełniacz $pole;
 $corobi = na | (zbij | bij | bije | zbija);
 $figura = pionek | wieża | skoczek | (laufer | goniec) | (królowa | hetman)| król;
-$naco = $litera $cyfra;
+$figura_dopełniacz = pionka | wieży | skoczka | (laufra | gońca) | (królowej | hetmana)| króla;
+$pole = $litera $cyfra;
 $litera = a | be | ce | de | e | ef | gie | ha;
 $cyfra = jeden | dwa | trzy | cztery | pięć | sześć | siedem | osiem;
 $roszada = roszada w stronę $figura_r;

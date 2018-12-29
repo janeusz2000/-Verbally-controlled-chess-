@@ -1,0 +1,12 @@
+#ABNF 1.0;
+language pl-pl;
+mode voice;
+root $root;
+tag-format <semantics/1.0-literals>;
+
+$root = $figura na $naco;
+
+$figura = pionek | wieża | skoczek | (laufer | goniec) | (królowa | hetman)| król;
+$naco = $litera $cyfra;
+$litera = a | be | ce | de | e | ef | gie | ha;
+$cyfra = jeden | dwa | trzy | cztery | pięć | sześć | siedem | osiem;

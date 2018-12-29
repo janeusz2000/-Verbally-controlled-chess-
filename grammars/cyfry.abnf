@@ -1,0 +1,23 @@
+#ABNF 1.0;
+language pl-pl;
+mode voice;
+root $root;
+tag-format <semantics/1.0-literals>;
+
+$root = ($word) <1-10>;
+
+$word = (jeden | raz) | dwa | trzy | cztery | pięć | sześć | siedem | osiem | dziewięć | zero;
+
+#ABNF 1.0;
+language pl-pl;
+mode voice;
+root $root;
+tag-format <semantics/1.0-literals>;
+
+$root = $figura na $naco;
+
+$figura = (pion | pionek) | wieża | (skoczek | koń | konik) | (laufer | goniec) |
+	(królowa | hetman)| król;
+$naco = $litera $cyfra;
+$litera = a | b | c | d | e | f | g | h;
+$cyfra = jeden | dwa | trzy | cztery | pięć | sześć | siedem | osiem;

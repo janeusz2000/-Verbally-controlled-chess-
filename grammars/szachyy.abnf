@@ -14,4 +14,4 @@ $litera = a | be | ce | de | e | ef | gie | ha;
 $cyfra = jeden | dwa | trzy | cztery | pięć | sześć | siedem | osiem;
 $roszada = roszada w stronę $figura_r;
 $figura_r = króla | królowej;
-$end = zakończ grę | koniec | poddaję się | poddaj się;
+$end = (zakończ grę | koniec) | (poddaję się | poddaj się);

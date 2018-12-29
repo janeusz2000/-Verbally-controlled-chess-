@@ -4,7 +4,7 @@ mode voice;
 root $root;
 tag-format <semantics/1.0-literals>;
 
-$root = $ruch | $roszada;
+$root = $ruch | $roszada | $end ;
 
 $ruch = $figura $naco $corobi $naco;
 $corobi = na | (zbij | bij | bije | zbija);
@@ -14,3 +14,4 @@ $litera = a | be | ce | de | e | ef | gie | ha;
 $cyfra = jeden | dwa | trzy | cztery | pięć | sześć | siedem | osiem;
 $roszada = roszada w stronę $figura_r;
 $figura_r = króla | królowej;
+$end = zakończ grę | koniec | poddaję się | poddaj się;

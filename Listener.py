@@ -7,7 +7,7 @@ class Listener(object):
     def __init__(self):
         self.exit_game_ = False
 
-    # temporary managiing to end program
+    # temporary managing to end program
     def exit_game(self):
         self.exit_game_ = True
 

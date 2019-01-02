@@ -9,10 +9,9 @@ from os.path import join as opjoin
 import sys
 import SarmataArgs
 
-
 if __name__ == '__main__':
     grammar_file = "grammars/szachyy.abnf"
-    args = SarmataArgs.SarmataArgs(grammar=grammar_file)
+    args = SarmataArgs.SarmataArgs(wav_filepath=None, grammar=grammar_file)
 
     settings = SarmataSettings()
     settings.process_args(args)  # load settings from cmd
@@ -50,6 +49,10 @@ if __name__ == '__main__':
             settings.set_session_id(session_id)
 
             results = recognizer.recognize(stream, settings)
+
             [results_speech, results_rr] = print_results(results, stream)
             result = results_speech[results_rr.index(max(results_rr))]
+            f = open("result.txt", "w+")
+            f.write(result)
+            f.close()
             print(result)

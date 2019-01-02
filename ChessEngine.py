@@ -1,6 +1,8 @@
 # This is main program running chess
 
 import chess
+import Listener
+import ChessConverter
 
 
 class ChessEngine:
@@ -15,13 +17,16 @@ class ChessEngine:
         self.repetition_ = False
         self.check_ = False
         self.manual_input_ = manual_input
+        self.listener = Listener.Listener()
+        self.converter = ChessConverter.ChessConverter()
 
     def move(self):
-        if self.manual_input_:
-            print(self.board_.legal_moves)
 
-            # move = input("Please make a move")
-            self.board_.push_san(input("Please make a move"))
+        print(self.board_.legal_moves)
+        message = self.listener.listen()
+        command = self.converter.convert(c=message)
+        self.board_.push_san(command)
+
 
     def console_view(self):
         print(self.board_)

@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from argparse import ArgumentParser
-from service.sarmata_settings import SarmataSettings
-from service.sarmata_recognize import SarmataRecognizer
-from service.sarmata_asr_pb2 import ResponseStatus, EMPTY, START_OF_INPUT
-from utils.audio_source import AudioStream
-from utils.mic_source import MicrophoneStream
+from sarmata.service.sarmata_settings import SarmataSettings
+from sarmata.service.sarmata_recognize import SarmataRecognizer
+from sarmata.service.sarmata_asr_pb2 import ResponseStatus, EMPTY, START_OF_INPUT
+from sarmata.utils.audio_source import AudioStream
+from sarmata.utils.mic_source import MicrophoneStream
 import sys
-from SARMATA_CLIENT_VERSION import SARMATA_CLIENT_VERSION
+from sarmata.SARMATA_CLIENT_VERSION import SARMATA_CLIENT_VERSION
 
 
 def print_results(responses, stream):

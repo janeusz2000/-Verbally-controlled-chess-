@@ -1,7 +1,6 @@
 """ This is main commander """
 import ChessEngine
 import GUI
-import Listener
 import ChessConverter
 # initialization
 
@@ -11,7 +10,6 @@ class Commander(object):
     # constructor
     def __init__(self):
         self.chess_engine_ = ChessEngine.ChessEngine(True)
-        self.listener_ = Listener.Listener()
         self.gui_ = GUI.GUI()
 
     def game_run(self, iteration_number):

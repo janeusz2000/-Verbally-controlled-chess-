@@ -21,6 +21,7 @@ class SarmataArgs:
     speech_complete_timeout = 5000      # MRCP v2 speech complete timeout [ms].
     speech_incomplete_timeout = 3000    # MRCP v2 speech incomplete timeout [ms].
     wave = None                         # Path to wave file with speech to be recognized. Should be mono, 8kHz or 16kHz.
+    result = ''
 
     def __init__(self, wav_filepath=None, grammar=None):
         ap = AddressProvider()

@@ -2,13 +2,15 @@
 import ChessEngine
 import GUI
 import ChessConverter
-# initialization
+import Instructions
 
 
 class Commander(object):
 
     # constructor
     def __init__(self):
+        self.instructions_ = Instructions.Instructions("instructions_pl.txt", "instrukcje gry")
+        self.instructions_.show_instructions()
         self.chess_engine_ = ChessEngine.ChessEngine(True)
         self.gui_ = GUI.GUI()
 
@@ -25,6 +27,7 @@ class Commander(object):
             self.gui_.paint_figures(temp)
 
             self.gui_.update_screen()
+
             self.chess_engine_.move()
 
             self.gui_.clock()

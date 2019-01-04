@@ -3,6 +3,7 @@
 import chess
 import Listener
 import ChessConverter
+import Instructions
 
 
 class ChessEngine:
@@ -24,6 +25,11 @@ class ChessEngine:
 
         print(self.board_.legal_moves)
         message = self.listener.listen()
+        instructions = Instructions.Instructions("instructions_pl.txt", "instrukcje gry")
+        if message == "Włącz instrukcje" or message == "Pokaż instrukcje":
+            instructions.show_instructions()
+        if message == "Wyłącz instrukcje" or message == "Zamknij instrukcje":
+            instructions.close_instructions()
         command = self.converter.convert(c=message)
         self.board_.push_san(command)
 

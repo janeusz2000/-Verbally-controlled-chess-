@@ -2,7 +2,6 @@
 import os
 import run_sarmata
 import keyboard
-import time
 
 
 class Listener(object):
@@ -18,7 +17,6 @@ class Listener(object):
             try:
                 if keyboard.is_pressed('space'):
                     os.system('python run_sarmata.py')
-                    time.sleep(10)
                     f = open("result.txt", "r")
                     self.message = f.read()
                     f.close()

@@ -102,13 +102,15 @@ class GUI(object):
                     self.screen_.blit(self.figure(temp_board[row][column]), (b, a))
                     self.update_screen()
 
-
     def load_texture(self):
         self.screen_.fill((0, 0, 0))
         self.screen_.blit(pygame.image.load('ChessArt/texture_small.png').convert(), (0, 0))
 
     def update_screen(self):
         pygame.display.update()
+
+    def instructions(self):
+        print("jaaa")
 
     @staticmethod
     def check_events():

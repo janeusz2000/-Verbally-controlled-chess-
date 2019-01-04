@@ -5,7 +5,7 @@ class ChessConverter(object):
 
     # constructor
     def __init__(self):
-        print("converter")
+        print("converter inited")
 
     def convert(self, c):
         converted = ''

@@ -1,0 +1,25 @@
+WITAJ W GRZE SZACHY STEROWANE G£OSEM!
+
+Instrukcje gry:
+
+Aby wykonaæ ruch naciœnij spacjê a nastêpnie wydaj komendê zgodnie z poni¿szymi zasadami:
+
+1.Przesuwanie figur
+  Aby przesun¹æ dowoln¹ figurê nale¿y powiedzieæ nazwê figury, pole na którym siê ona znajduje (litera i cyfra), s³owo 'na' oraz pole, na które figura ma zostaæ przesuniêta.
+  Przyk³ad: 'Skoczek a3 na b5'
+2.Zbijanie figur
+  Aby zbiæ figurê przeciwnika nale¿y zamiast s³owa 'na' u¿yæ jednego ze s³ów:'zbij', 'bij', 'zbija', 'bije'.
+3.Roszada
+  Jeœli chcesz wykonaæ roszadê powiedz: 'Roszada w stronê króla/królowej'
+4.Zakoñczenie gry
+  Aby zakoñczyæ grê nale¿y powiedzieæ jedno z poni¿szych:
+  'Zakoñcz grê', 'Koniec gry', 'Koniec', 'Poddajê siê', 'Poddaj siê'.
+
+Uwaga:
+Wydaj¹c komendy u¿ywaj TYLKO poni¿szych nazw figur:
+-pionek
+-wie¿a
+-skoczek
+-goniec lub laufer
+-hetman lub królowa
+-król

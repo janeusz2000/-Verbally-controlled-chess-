@@ -4,7 +4,7 @@ mode voice;
 root $root;
 tag-format <semantics/1.0-literals>;
 
-$root = $ruch | $roszada | $end ;
+$root = $ruch | $roszada | $end | $instruction_on | $instruction_off;
 
 $ruch = $figura $naco $corobi $naco;
 $corobi = na | (zbij | bij | bije | zbija);
@@ -15,3 +15,5 @@ $cyfra = jeden | dwa | trzy | cztery | pięć | sześć | siedem | osiem;
 $roszada = roszada w stronę $figura_r;
 $figura_r = króla | królowej;
 $end = zakończ grę | koniec | poddaję się | poddaj się| koniec gry;
+$instruction_on = pokaż instrukcje | otwórz instrukcje
+$instruction_off = zamknij instrukcje

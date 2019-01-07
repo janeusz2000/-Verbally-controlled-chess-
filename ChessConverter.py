@@ -9,11 +9,8 @@ class ChessConverter(object):
 
     def convert(self, c):
         converted = ''
-        # splitting to words "pionek e trzy na/zbij e cztery"
         command = c.split()
-        if c == "poddaję się" or c == "poddaj się" or c == "zakończ grę" or c == "koniec gry" or c == "koniec":
-            converted = "exit"  # jeszcze trzeba połączyc z funkcja exit
-        elif c == "roszada w stronę króla":
+        if c == "roszada w stronę króla":
             converted += 'O-O'
         elif c == "roszada w stronę królowej":
             converted += 'O-O-O'

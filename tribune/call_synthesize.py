@@ -1,8 +1,8 @@
-import tribune_tts_pb2
-import tribune_tts_pb2_grpc
+from tribune import tribune_tts_pb2
+from tribune import tribune_tts_pb2_grpc
 import grpc
 import os
-from wave_saver import WaveSaver
+from tribune.wave_saver import WaveSaver
 
 
 def call_synthesize(service, text, out_path, sample_rate):

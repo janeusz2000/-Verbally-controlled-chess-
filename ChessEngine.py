@@ -27,7 +27,7 @@ class ChessEngine:
             move = chess.Move.from_uci(self.listener_.move_)
             if move in self.board_.legal_moves:
                 print("True")
-                self.board_.push(move)
+                self.board_.push_san(move)
                 break
             else:
                 winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)

@@ -6,10 +6,10 @@ from address_provider import AddressProvider
 
 if __name__ == '__main__':
     # Config:
-    output_wave_file = 'wrong_move_pl.wav'
+    output_wave_file = 'stalemate_pl.wav'
     ap = AddressProvider()
     address = ap.get("tribune")
     sampling_rate = 44100
-    input_text = "Ten ruch nie jest dozwolony. Spróbuj jeszcze raz."
+    input_text = "Pat."
 
     call_synthesize(address, input_text, output_wave_file, sampling_rate)

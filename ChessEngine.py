@@ -24,7 +24,7 @@ class ChessEngine:
         print(self.board_.legal_moves)
         while True:
             self.listener_.listen()
-            move = chess.Move.from_uci(self.listener_.move_)
+            move = self.listener_.move_
             try:
                 self.board_.push_san(move)
                 break

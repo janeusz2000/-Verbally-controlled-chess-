@@ -18,7 +18,7 @@ class ChessEngine:
         self.check_ = False
         self.manual_input_ = manual_input
         self.listener_ = Listener.Listener()
-        self.ending_ = 'checkmate'
+        self.ending_ = None
 
     def move(self):
 
@@ -72,6 +72,6 @@ class ChessEngine:
             self.ending_ = 'stalemate'
             return True
         else:
-            return True
+            return False
 
 

@@ -4,7 +4,6 @@ import run_sarmata
 import keyboard
 import Instructions
 import ChessConverter
-import sys
 
 
 class Listener(object):

@@ -26,6 +26,8 @@ class Instructions(object):
             if command == "zamknij instrukcje":
                 self.tk_.destroy()
                 break
+            elif command == "":
+                break
             else:
                 continue
 

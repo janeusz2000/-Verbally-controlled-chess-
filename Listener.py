@@ -30,7 +30,6 @@ class Listener(object):
                 instructions.show_instructions()
             elif self.message_ == "poddaję się" or self.message_ == "poddaj się" \
                     or self.message_ == "zakończ grę" or self.message_ == "koniec gry" or self.message_ == "koniec":
-                print("exit") # jeszcze trzeba połączyc z funkcja exit
                 sys.exit(1)
 
             else:

@@ -29,6 +29,8 @@ class GUI(object):
         pygame.display.set_icon(self.black_king_)
         pygame.display.set_caption('Verbally Controlled Chess')
 
+        self.clock_ = pygame.time.Clock()
+
     # destructor
     def __del__(self):
         pygame.quit()
@@ -100,7 +102,6 @@ class GUI(object):
                     pass
                 else:
                     self.screen_.blit(self.figure(temp_board[row][column]), (b, a))
-                    self.update_screen()
 
     def load_texture(self):
         self.screen_.fill((0, 0, 0))
@@ -112,16 +113,14 @@ class GUI(object):
     def instructions(self):
         print("jaaa")
 
+    def clock(self):
+        self.clock_.tick(60)
+
     @staticmethod
     def check_events():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit(0)
-
-    @staticmethod
-    def clock():
-        clock = pygame.time.Clock()
-        clock.tick(60)
 
     @staticmethod
     def display_flip():

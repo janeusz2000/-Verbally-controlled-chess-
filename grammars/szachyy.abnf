@@ -4,8 +4,11 @@ mode voice;
 root $root;
 tag-format <semantics/1.0-literals>;
 
-$root = $ruch | $roszada | $end | $instruction_on | $instruction_off;
+$root = $ruch | $roszada | $end | $instruction_on | $instruction_off | $mozliwosci
+    | $położenie;
 
+$położenie = $figura $naco;
+$mozliwosci = pokaż (dostępne | możliwe) ruchy;
 $ruch = $figura $naco $corobi $naco;
 $corobi = na | (zbij | bij | bije | zbija);
 $figura = pionek | wieża | skoczek | (laufer | goniec) | (królowa | hetman)| król;

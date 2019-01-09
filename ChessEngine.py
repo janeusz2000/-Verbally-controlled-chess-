@@ -24,14 +24,27 @@ class ChessEngine:
         print(self.board_.legal_moves)
         self.listener_.listen()
         move = self.listener_.move_
-        if move != '':
-            try:
-                print(move)
-                self.board_.push_san(move)
-                if self.board_.is_check():
-                    winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
-            except ValueError:
-                winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
+        if self.listener_.show_moves_ == True:
+            if move != '':
+                try:
+                    print(move)
+                    self.board_.push_san(move)
+                    if self.board_.is_check():
+                        winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
+                except ValueError:
+                    winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
+        else:
+            winsound.PlaySound('ask_of_figure_pl.wav', winsound.SND_FILENAME)
+            self.listener_.listen()
+            figure = self.listener_.move_
+            if figure != '':
+                try:
+                    print(self.board_.legal_moves.uci())
+                except ValueError:
+                    winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
+
+
+
 
 
     def console_view(self):

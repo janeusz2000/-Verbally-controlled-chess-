@@ -25,14 +25,56 @@ class ChessEngine:
         while True:
             self.listener_.listen()
             move = chess.Move.from_uci(self.listener_.move_)
-            if move in self.board_.legal_moves:
-                print("True")
+            try:
                 self.board_.push_san(move)
                 break
-            else:
+            except ValueError:
                 winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
-                continue
+
 
     def console_view(self):
         print(self.board_)
+
+    def console_move(self):
+        print(self.board_.legal_moves)
+        try:
+            self.board_.push_san(input("Please make a move: "))
+        except ValueError:
+            print("illegal move")
+
+    def checking_all_ends(self):
+
+        """
+
+        return [checkmate, insufficient_material, five_fold_repetition, stalemate]
+        """
+
+        output = []
+
+        # checkmate
+        if self.board_.is_checkmate():
+            output.append(True)
+        else:
+            output.append(False)
+
+        # insufficient material
+        if self.board_.is_insufficient_material():
+            output.append(True)
+        else:
+            output.append(False)
+
+        # fivefold_repetition
+        if self.board_.is_fivefold_repetition():
+            output.append(True)
+        else:
+            output.append(False)
+
+        # stalemate
+        if self.board_.is_stalemate():
+            output.append(True)
+        else:
+            output.append(False)
+
+        return output
+
 

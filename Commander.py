@@ -14,7 +14,7 @@ class Commander(object):
         self.chess_engine_ = ChessEngine.ChessEngine(True)
         self.gui_ = GUI.GUI()
 
-    def game_run(self, iteration_number):
+    def game_run(self):
 
         local_iteration = 1
 

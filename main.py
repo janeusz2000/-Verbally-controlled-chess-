@@ -2,7 +2,6 @@
 
 import Commander
 
-
 GameCommander = Commander.Commander()
 GameCommander.game_run()
 

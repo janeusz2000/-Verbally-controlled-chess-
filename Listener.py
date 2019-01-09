@@ -27,8 +27,6 @@ class Listener(object):
                     self.message_ = f.read()
                     if self.message_ == "otwórz instrukcje" or self.message_ == "pokaż instrukcje":
                         instructions.show_instructions()
-                    elif self.message_ == "zamknij instrukcje":
-                        instructions.close_instructions()
                     elif self.message_ == "poddaję się" or self.message_ == "poddaj się" \
                             or self.message_ == "zakończ grę" or self.message_ == "koniec gry" or self.message_ == "koniec":
                         print("exit") # jeszcze trzeba połączyc z funkcja exit

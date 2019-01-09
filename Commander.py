@@ -26,8 +26,6 @@ class Commander(object):
             temp = self.gui_.read_game(self.chess_engine_)
             self.gui_.paint_figures(temp)
 
-            self.gui_.update_screen()
-
             self.chess_engine_.move()
 
             self.gui_.clock()

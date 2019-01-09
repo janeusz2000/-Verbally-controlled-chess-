@@ -104,7 +104,7 @@ class GUI(object):
 
     def load_texture(self):
         self.screen_.fill((0, 0, 0))
-        self.screen_.blit(pygame.image.load('ChessArt/texture_mid.png').convert(), (0, 0))
+        self.screen_.blit(pygame.image.load('ChessArt/texture_mid_2.png').convert(), (0, 0))
 
     def update_screen(self):
         pygame.display.update()

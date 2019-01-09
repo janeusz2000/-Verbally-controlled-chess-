@@ -26,7 +26,10 @@ class ChessEngine:
         move = self.listener_.move_
         if move != '':
             try:
+                print(move)
                 self.board_.push_san(move)
+                if self.board_.is_check():
+                    winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
             except ValueError:
                 winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
 

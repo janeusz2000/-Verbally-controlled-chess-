@@ -21,6 +21,7 @@ class Listener(object):
         while True:  # making a loop
             try:
                 if keyboard.is_pressed('space'):
+                    self.move_ = ''
                     os.system('python run_sarmata.py')
                     f = open("result.txt", "r")
                     self.message_ = f.read()

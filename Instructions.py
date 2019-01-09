@@ -1,4 +1,5 @@
 import tkinter
+import Listener
 
 
 class Instructions(object):
@@ -17,6 +18,20 @@ class Instructions(object):
 
     def show_instructions(self):
         self.tk_.mainloop()
+        while True:  # making a loop
+            try:
+                if keyboard.is_pressed('space'):
+                    os.system('python run_sarmata.py')
+                    f = open("result.txt", "r")
+                    command = f.read()
+                    if command == "zamknij instrukcje":
+                        self.close_instructions()
+                    f.close()
+                    break
+                else:
+                    pass
+            except:
+                break
 
     def close_instructions(self):
         self.tk_.destroy()

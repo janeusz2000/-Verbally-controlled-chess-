@@ -9,7 +9,7 @@ class SarmataSettings:
         self.max_alternatives = 3           # Maximum number of recognition hypotheses to be returned
         self.no_match_threshold = 0.2       # Confidence threshold for recognition / no-match
         self.speech_complete_timeout = 500  # ms - MRCP speech complete timeout
-        self.speech_incomplete_timeout = 3000# ms - MRCP speech incomplete timeout
+        self.speech_incomplete_timeout = 3000  # ms - MRCP speech incomplete timeout
         self.no_input_timeout = 5000        # ms - MRCP no input timeout
         self.recognition_timeout = 10000    # ms - MRCP no recognition timeout
         self.session_id = ''

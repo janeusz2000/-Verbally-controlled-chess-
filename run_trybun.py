@@ -6,10 +6,10 @@ from address_provider import AddressProvider
 
 if __name__ == '__main__':
     # Config:
-    output_wave_file = 'stalemate_pl.wav'
+    output_wave_file = 'fivefold_repetition_pl.wav'
     ap = AddressProvider()
     address = ap.get("tribune")
     sampling_rate = 44100
-    input_text = "Pat."
+    input_text = "Pięciokrotne powtórzenie."
 
     call_synthesize(address, input_text, output_wave_file, sampling_rate)

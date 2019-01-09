@@ -31,6 +31,8 @@ class Commander(object):
 
             self.gui_.clock()
             self.gui_.display_flip()
-            self.gui_.update_screen()
             if self.chess_engine_.checking_all_ends():
                 self.gui_.ending(self.chess_engine_.ending_)
+                self.gui_.update_screen()
+
+            self.gui_.update_screen()

@@ -118,6 +118,7 @@ class GUI(object):
 
     def ending(self, name):
         path = 'ChessArt/'+name+'.png'
+        self.screen_.fill((0, 0, 0))
         self.screen_.blit(pygame.image.load(path).convert(), (0, 0))
 
     @staticmethod

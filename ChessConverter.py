@@ -48,7 +48,7 @@ class ChessConverter(object):
             else:
                 print("Wrong command")
             converted += "x"
-        elif command[3] == "na":
+        elif command[3] == "na" and command[0]!= "pionek":
             if command[1] == "a":
                 converted += 'a'
             elif command[1] == "be":

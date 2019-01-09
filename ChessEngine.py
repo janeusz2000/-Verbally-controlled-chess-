@@ -24,10 +24,11 @@ class ChessEngine:
         print(self.board_.legal_moves)
         self.listener_.listen()
         move = self.listener_.move_
-        try:
-            self.board_.push_san(move)
-        except ValueError:
-            winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
+        if move != '':
+            try:
+                self.board_.push_san(move)
+            except ValueError:
+                winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
 
 
     def console_view(self):

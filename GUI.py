@@ -116,6 +116,10 @@ class GUI(object):
     def clock(self):
         self.clock_.tick(60)
 
+    def ending(self, name):
+        path = 'ChessArt/'+name+'.png'
+        self.screen_.blit(pygame.image.load(path).convert(), (0, 0))
+
     @staticmethod
     def check_events():
         for event in pygame.event.get():

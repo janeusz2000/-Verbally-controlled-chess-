@@ -27,8 +27,10 @@ class Commander(object):
             temp = self.gui_.read_game(self.chess_engine_)
             self.gui_.paint_figures(temp)
             if keyboard.is_pressed('space'):
-                self.chess_engine_.move()
+                self.chess_engine_.console_move()
 
             self.gui_.clock()
             self.gui_.display_flip()
             self.gui_.update_screen()
+            if self.chess_engine_.checking_all_ends():
+                self.gui_.ending(self.chess_engine_.ending_)

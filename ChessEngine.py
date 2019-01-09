@@ -18,33 +18,21 @@ class ChessEngine:
         self.check_ = False
         self.manual_input_ = manual_input
         self.listener_ = Listener.Listener()
+        self.ending_ = None
 
     def move(self):
 
         print(self.board_.legal_moves)
         self.listener_.listen()
         move = self.listener_.move_
-        if self.listener_.show_moves_ == True:
-            if move != '':
-                try:
-                    print(move)
-                    self.board_.push_san(move)
-                    if self.board_.is_check():
-                        winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
-                except ValueError:
-                    winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
-        else:
-            winsound.PlaySound('ask_of_figure_pl.wav', winsound.SND_FILENAME)
-            self.listener_.listen()
-            figure = self.listener_.move_
-            if figure != '':
-                try:
-                    print(self.board_.legal_moves.uci())
-                except ValueError:
-                    winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
-
-
-
+        if move != '':
+            try:
+                print(move)
+                self.board_.push_san(move)
+                if self.board_.is_check():
+                    winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
+            except ValueError:
+                winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
 
 
     def console_view(self):
@@ -66,18 +54,22 @@ class ChessEngine:
         # checkmate
         if self.board_.is_checkmate():
             winsound.PlaySound("checkmate_pl.wav", winsound.SND_FILENAME)
+            self.ending_ = 'checkmate'
             return True
         # insufficient material
         elif self.board_.is_insufficient_material():
             winsound.PlaySound("insufficient_material_pl.wav", winsound.SND_FILENAME)
+            self.ending_ = 'insufficient_material'
             return True
         # fivefold_repetition
         elif self.board_.is_fivefold_repetition():
             winsound.PlaySound("fivefold_repetition_pl.wav", winsound.SND_FILENAME)
+            self.ending_ = 'fivefold_repetition'
             return True
         # stalemate
         elif self.board_.is_stalemate():
             winsound.PlaySound("stalemate_pl.wav", winsound.SND_FILENAME)
+            self.ending_ = 'stalemate'
             return True
         else:
             return False

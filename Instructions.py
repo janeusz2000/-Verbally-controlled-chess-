@@ -1,5 +1,6 @@
 import tkinter
 import Listener
+import os
 
 
 class Instructions(object):
@@ -7,7 +8,7 @@ class Instructions(object):
         self.file_ = f
         self.title_ = t
         self.tk_ = tkinter.Tk()
-        self.tk_.title(self.title_)
+        self.tk_.title()
         self.var_ = tkinter.StringVar()
         self.label_ = tkinter.Message(self.tk_, textvariable=self.var_)
         file = open(self.file_, mode='r')
@@ -16,23 +17,22 @@ class Instructions(object):
         file.close()
         self.label_.pack()
 
-    def show_instructions(self):
-        self.tk_.mainloop()
+    def quit(self, event=None):
         while True:  # making a loop
-            try:
-                if keyboard.is_pressed('space'):
-                    os.system('python run_sarmata.py')
-                    f = open("result.txt", "r")
-                    command = f.read()
-                    if command == "zamknij instrukcje":
-                        self.close_instructions()
-                    f.close()
-                    break
-                else:
-                    pass
-            except:
+            os.system('python run_sarmata.py')
+            f = open("result.txt", "r")
+            command = f.read()
+            f.close()
+            if command == "zamknij instrukcje":
+                self.tk_.destroy()
                 break
+            elif command == "":
+                break
+            else:
+                continue
 
-    def close_instructions(self):
-        self.tk_.destroy()
+    def show_instructions(self):
+        self.tk_.bind("<space>", self.quit)
+        self.tk_.mainloop()
+
 

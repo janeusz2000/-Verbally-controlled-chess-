@@ -47,36 +47,26 @@ class ChessEngine:
     def checking_all_ends(self):
 
         """
-
-        return [checkmate, insufficient_material, five_fold_repetition, stalemate]
+        return true if it is end/[checkmate, insufficient_material, five_fold_repetition, stalemate]
         """
-
-        output = []
 
         # checkmate
         if self.board_.is_checkmate():
-            output.append(True)
-        else:
-            output.append(False)
-
+            winsound.PlaySound("checkmate_pl.wav", winsound.SND_FILENAME)
+            return True
         # insufficient material
-        if self.board_.is_insufficient_material():
-            output.append(True)
-        else:
-            output.append(False)
-
+        elif self.board_.is_insufficient_material():
+            winsound.PlaySound("insufficient_material_pl.wav", winsound.SND_FILENAME)
+            return True
         # fivefold_repetition
-        if self.board_.is_fivefold_repetition():
-            output.append(True)
-        else:
-            output.append(False)
-
+        elif self.board_.is_fivefold_repetition():
+            winsound.PlaySound("fivefold_repetition_pl.wav", winsound.SND_FILENAME)
+            return True
         # stalemate
-        if self.board_.is_stalemate():
-            output.append(True)
+        elif self.board_.is_stalemate():
+            winsound.PlaySound("stalemate_pl.wav", winsound.SND_FILENAME)
+            return True
         else:
-            output.append(False)
-
-        return output
+            return False
 
 

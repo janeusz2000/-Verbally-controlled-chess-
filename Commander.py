@@ -32,6 +32,8 @@ class Commander(object):
 
             self.gui_.clock()
             self.gui_.display_flip()
+            #if self.chess_engine_.checking_all_ends():
+                ##Game ending, black screen
             # =====================================
 
             # # temporary console view

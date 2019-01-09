@@ -4,6 +4,7 @@ import run_sarmata
 import keyboard
 import Instructions
 import ChessConverter
+import sys
 
 
 class Listener(object):
@@ -30,7 +31,7 @@ class Listener(object):
                     instructions.close_instructions()
                 elif self.message_ == "poddaję się" or self.message_ == "poddaj się" \
                         or self.message_ == "zakończ grę" or self.message_ == "koniec gry" or self.message_ == "koniec":
-                    print("exit") # jeszcze trzeba połączyc z funkcja exit
+                    sys.exit(1)
                 else:
                     self.move_ = self.converter_.convert(c=self.message_)
                 f.close()

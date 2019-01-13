@@ -5,6 +5,7 @@ import keyboard
 import Instructions
 import ChessConverter
 import sys
+import winsound
 
 
 class Listener(object):
@@ -19,9 +20,7 @@ class Listener(object):
     # temporary managing to end program
     def listen(self):
         instructions = Instructions.Instructions("instructions_pl.txt", "instrukcje gry")
-
         try:
-
             self.move_ = ''
             os.system('python run_sarmata.py')
             f = open("result.txt", "r")
@@ -31,11 +30,12 @@ class Listener(object):
             elif self.message_ == "poddaję się" or self.message_ == "poddaj się" \
                     or self.message_ == "zakończ grę" or self.message_ == "koniec gry" or self.message_ == "koniec":
                 sys.exit(1)
-
+            elif self.message_ == "repeat":
+                winsound.PlaySound("repeat_pl.wav", winsound.SND_FILENAME)
+                self.listen()
             else:
                 self.move_ = self.converter_.convert(c=self.message_)
             f.close()
-
         except:
             pass
 

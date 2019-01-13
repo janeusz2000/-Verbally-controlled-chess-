@@ -18,7 +18,6 @@ class Commander(object):
 
     def game_run(self):
         END = False
-        local_iteration = 1
 
         while True:
 

@@ -26,6 +26,9 @@ class Instructions(object):
             if command == "zamknij instrukcje":
                 self.tk_.destroy()
                 break
+            elif command == "repeat":
+                winsound.PlaySound("repeat_pl.wav", winsound.SND_FILENAME)
+                continue
             elif command == "":
                 break
             else:

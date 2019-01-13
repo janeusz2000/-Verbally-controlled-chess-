@@ -45,14 +45,24 @@ if __name__ == '__main__':
 
         with create_audio_stream(args) as stream:
             # generate id
+            f_min_dif = open("min_difference.txt")
+            min_dif = float(f_min_dif.read())
             session_id = stream.session_id()
             settings.set_session_id(session_id)
-
             results = recognizer.recognize(stream, settings)
-
             [results_speech, results_rr] = print_results(results, stream)
             result = results_speech[results_rr.index(max(results_rr))]
-            f = open("result.txt", "w+")
-            f.write(result)
-            f.close()
+
+            if index(max(results_rr)) == 0:
+                if max(results_rr)-results_rr[1] <= min_dif or max(results_rr)-results_rr[2] <= min_dif:
+                    result = "repeat"
+            if index(max(results_rr)) == 1:
+                if max(results_rr)-results_rr[0] <= min_dif or max(results_rr)-results_rr[2] <= min_dif:
+                    result = "repeat"
+            if index(max(results_rr)) == 2:
+                if max(results_rr)-results_rr[1] <= min_dif or max(results_rr)-results_rr[0] <= min_dif:
+                    result = "repeat"
+            f_result = open("result.txt", "w+")
+            f_result.write(result)
+            f_result.close()
             print(result)

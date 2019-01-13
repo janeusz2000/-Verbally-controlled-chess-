@@ -34,7 +34,6 @@ class ChessEngine:
             except ValueError:
                 winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
 
-
     def console_view(self):
         print(self.board_)
 

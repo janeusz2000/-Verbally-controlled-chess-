@@ -25,7 +25,7 @@ class GUI(object):
         self.white_queen_ = pygame.image.load("ChessArt/WQ.png")
         self.white_rook_ = pygame.image.load("ChessArt/WR.png")
 
-        self.screen_ = pygame.display.set_mode([600, 600])
+        self.screen_ = pygame.display.set_mode([620, 620])
         pygame.display.set_icon(self.black_king_)
         pygame.display.set_caption('Verbally Controlled Chess')
 
@@ -96,8 +96,8 @@ class GUI(object):
     def paint_figures(self, temp_board):
         for row in range(0, 8):
             for column in range(0, 8):
-                a = row * 75 + 6    # Y
-                b = column * 75 + 6     # X
+                a = row * 75 + 26    # Y
+                b = column * 75 + 26     # X
                 if self.figure(temp_board[row][column]) == False:
                     pass
                 else:

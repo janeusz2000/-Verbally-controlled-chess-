@@ -5,6 +5,7 @@ import ChessConverter
 import Instructions
 import keyboard
 import time
+import sys
 
 
 class Commander(object):
@@ -21,6 +22,10 @@ class Commander(object):
 
         while True:
 
+            # making move
+            if keyboard.is_pressed('space'):
+                self.chess_engine_.console_move()
+
             # texture
             if not END:
                 self.gui_.load_texture()
@@ -28,16 +33,12 @@ class Commander(object):
             # events
             self.gui_.check_events()
 
-            # game
+            # position read
             temp = self.gui_.read_game(self.chess_engine_)
 
             # painting game
             if not END:
                 self.gui_.paint_figures(temp)
-
-            # making move
-            if keyboard.is_pressed('space'):
-                self.chess_engine_.console_move()
 
             # decreasing CPU usage
             self.gui_.clock()
@@ -45,13 +46,16 @@ class Commander(object):
             # flip display
             self.gui_.display_flip()
 
-            # checking game events
-            if self.chess_engine_.checking_all_ends():
-                END = True
-                self.gui_.update_screen()
+            if END:
                 time.sleep(1)
-                self.gui_.ending(self.chess_engine_.ending_)
-                self.gui_.update_screen()
+                sys.exit(1)
 
             # refreshing screen
             self.gui_.update_screen()
+
+            # checking game events
+            if self.chess_engine_.checking_all_ends():
+                END = True
+                self.gui_.ending(self.chess_engine_.ending_)
+                self.gui_.update_screen()
+                time.sleep(1)

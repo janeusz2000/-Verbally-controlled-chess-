@@ -47,22 +47,32 @@ if __name__ == '__main__':
             # generate id
             f_min_dif = open("min_difference.txt")
             min_dif = float(f_min_dif.read())
+            f_result = open("result.txt", "w+")
+            f_result.write('')
             session_id = stream.session_id()
             settings.set_session_id(session_id)
             results = recognizer.recognize(stream, settings)
             [results_speech, results_rr] = print_results(results, stream)
             result = results_speech[results_rr.index(max(results_rr))]
-
-            if results_rr.index(max(results_rr)) == 0:
-                if max(results_rr)-results_rr[1] <= min_dif or max(results_rr)-results_rr[2] <= min_dif:
-                    result = "repeat"
-            if results_rr.index(max(results_rr)) == 1:
-                if max(results_rr)-results_rr[0] <= min_dif or max(results_rr)-results_rr[2] <= min_dif:
-                    result = "repeat"
-            if results_rr.index(max(results_rr)) == 2:
-                if max(results_rr)-results_rr[1] <= min_dif or max(results_rr)-results_rr[0] <= min_dif:
-                    result = "repeat"
-            f_result = open("result.txt", "w+")
+            if len(results_rr) >= 1:
+                if results_rr.index(max(results_rr)) == 0:
+                    if len(results_rr >= 2):
+                        if max(results_rr) - results_rr[1] <= min_dif:
+                            result = "repeat"
+                    if len(results_rr >= 3):
+                        if max(results_rr) - results_rr[2] <= min_dif:
+                            result = "repeat"
+            if len(results_rr >= 2):
+                if results_rr.index(max(results_rr)) == 1:
+                    if max(results_rr) - results_rr[0] <= min_dif:
+                        result = "repeat"
+                    if len(results_rr >= 3):
+                        if max(results_rr) - results_rr[2] <= min_dif:
+                            result = "repeat"
+            if len(results_rr >= 3):
+                if results_rr.index(max(results_rr)) == 2:
+                    if max(results_rr) - results_rr[1] <= min_dif or max(results_rr) - results_rr[0] <= min_dif:
+                        result = "repeat"
             f_result.write(result)
             f_result.close()
             print(result)

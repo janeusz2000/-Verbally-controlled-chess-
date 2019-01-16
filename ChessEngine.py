@@ -11,6 +11,7 @@ class ChessEngine:
 
     def __init__(self, manual_input):
         self.board_ = chess.Board()
+
         self.stalemate_ = False
         self.draw_ = False
         self.mate_ = False
@@ -29,6 +30,7 @@ class ChessEngine:
             try:
                 print(move)
                 self.board_.push_san(move)
+                self.listener_.move_ = ''
                 if self.board_.is_check():
                     winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
             except ValueError:

@@ -6,6 +6,7 @@ import Instructions
 import keyboard
 import time
 import sys
+import chess
 
 
 class Commander(object):
@@ -19,6 +20,10 @@ class Commander(object):
 
     def game_run(self):
         END = False
+        # moves = self.chess_engine_.board_.generate_legal_moves(gi_yieldfrom="a2")
+        # print(moves)
+        # a=0
+
 
         while True:
 

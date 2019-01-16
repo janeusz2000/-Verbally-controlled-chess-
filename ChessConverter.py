@@ -62,7 +62,7 @@ class ChessConverter(object):
                         converted += 'f'
                     elif command[4] == "gie":
                         converted += 'g'
-                    elif command[4] == "h":
+                    elif command[4] == "ha":
                         converted += 'h'
                 if len(command) >= 6:
                     if command[5] == "jeden":

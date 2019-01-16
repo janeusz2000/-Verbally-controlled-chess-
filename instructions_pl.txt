@@ -17,6 +17,8 @@ Aby wykonaæ ruch naciœnij spacjê a nastêpnie wydaj komendê zgodnie z poni¿szymi 
 5.Instrukcje
   Aby ponownie w³¹czyæ instrukcje gry u¿yj komendy: "Poka¿ instrukcje" lub "Otwórz instrukcje". 
   Aby je wy³¹czyæ u¿yj komendy: "Zamknij instrukcje".
+6.Dostêpne ruchy
+  Aby uzyskaæ informacje na temat dostêpnych ruchów u¿yj komendy: "Poka¿ dostêpne/mo¿liwe ruchy".
 
 Uwaga:
 Wydaj¹c komendy u¿ywaj TYLKO poni¿szych nazw figur:

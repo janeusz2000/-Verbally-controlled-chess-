@@ -20,21 +20,32 @@ class ChessEngine:
         self.manual_input_ = manual_input
         self.listener_ = Listener.Listener()
         self.ending_ = None
+        self.from_where_ = ''
+        self.to_where_ = []
 
     def move(self):
 
         print(self.board_.legal_moves)
         self.listener_.listen()
         move = self.listener_.move_
-        if move != '':
+        if self.listener_.checking_:
             try:
                 print(move)
-                self.board_.push_san(move)
-                self.listener_.move_ = ''
-                if self.board_.is_check():
-                    winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
+                self.to_where_ = move
+                self.checking_moves(move)
+                self.listener_.checking_ = False
             except ValueError:
                 winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
+        else:
+            if move != '':
+                try:
+                    print(move)
+                    self.board_.push_san(move)
+                    self.listener_.move_ = ''
+                    if self.board_.is_check():
+                        winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
+                except ValueError:
+                    winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
 
     def console_view(self):
         print(self.board_)
@@ -75,4 +86,11 @@ class ChessEngine:
         else:
             return False
 
+    def checking_moves(self, from_where):
+        moves = self.board_.legal_moves
+        list_of_moves = []
+        for move in moves:
+            if from_where in move.uci():
+                list_of_moves.append(move.uci()[2:])
+        self.to_where_ = list_of_moves
 

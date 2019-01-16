@@ -17,14 +17,10 @@ class Commander(object):
         self.instructions_.show_instructions()
         self.chess_engine_ = ChessEngine.ChessEngine(True)
         self.gui_ = GUI.GUI()
+        self.converter_ = ChessConverter.ChessConverter()
 
     def game_run(self):
         END = False
-        # moves = self.chess_engine_.board_.generate_legal_moves(gi_yieldfrom="a2")
-        # print(moves)
-        # a=0
-
-
         while True:
 
             # making move
@@ -43,7 +39,13 @@ class Commander(object):
 
             # painting game
             if not END:
+                # checking if there are available move to show
+                if self.chess_engine_.from_where_ != '':
+                    self.gui_.paint_field(self.converter_.convert_field_for_gui(self.chess_engine_.from_where_), "red")
+                    for move in self.chess_engine_.to_where_:
+                        self.gui_.paint_field(self.converter_.convert_field_for_gui(move), "blue")
                 self.gui_.paint_figures(temp)
+
 
             # decreasing CPU usage
             self.gui_.clock()
@@ -64,3 +66,6 @@ class Commander(object):
                 self.gui_.ending(self.chess_engine_.ending_)
                 self.gui_.update_screen()
                 time.sleep(1)
+
+            self.chess_engine_.from_where_ = ''
+            self.chess_engine_.to_where_ = []

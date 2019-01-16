@@ -16,6 +16,7 @@ class Listener(object):
         self.message_ = ''
         self.move_ = ''
         self.converter_ = ChessConverter.ChessConverter()
+        self.checking_ = False
 
     # temporary managing to end program
     def listen(self):
@@ -33,6 +34,12 @@ class Listener(object):
             elif self.message_ == "repeat":
                 winsound.PlaySound("repeat_pl.wav", winsound.SND_FILENAME)
                 self.listen()
+            elif self.message_ == "pokaż dostępne ruchy" or self.message_ == "pokaż możliwe ruchy":
+                winsound.PlaySound("ask_of_figure_pl.wav", winsound.SND_FILENAME)
+                self.checking_ = True
+                self.listen()
+            elif self.checking_:
+                self.move_ = self.converter_.convert_pos(c=self.message_)
             else:
                 self.move_ = self.converter_.convert(c=self.message_)
             f.close()

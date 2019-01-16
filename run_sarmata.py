@@ -56,20 +56,20 @@ if __name__ == '__main__':
             result = results_speech[results_rr.index(max(results_rr))]
             if len(results_rr) >= 1:
                 if results_rr.index(max(results_rr)) == 0:
-                    if len(results_rr >= 2):
+                    if len(results_rr) >= 2:
                         if max(results_rr) - results_rr[1] <= min_dif:
                             result = "repeat"
-                    if len(results_rr >= 3):
+                    if len(results_rr) >= 3:
                         if max(results_rr) - results_rr[2] <= min_dif:
                             result = "repeat"
-            if len(results_rr >= 2):
+            if len(results_rr) >= 2:
                 if results_rr.index(max(results_rr)) == 1:
                     if max(results_rr) - results_rr[0] <= min_dif:
                         result = "repeat"
-                    if len(results_rr >= 3):
+                    if len(results_rr) >= 3:
                         if max(results_rr) - results_rr[2] <= min_dif:
                             result = "repeat"
-            if len(results_rr >= 3):
+            if len(results_rr) >= 3:
                 if results_rr.index(max(results_rr)) == 2:
                     if max(results_rr) - results_rr[1] <= min_dif or max(results_rr) - results_rr[0] <= min_dif:
                         result = "repeat"

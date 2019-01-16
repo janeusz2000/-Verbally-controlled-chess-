@@ -25,6 +25,9 @@ class GUI(object):
         self.white_queen_ = pygame.image.load("ChessArt/WQ.png")
         self.white_rook_ = pygame.image.load("ChessArt/WR.png")
 
+        self.red_square_ = pygame.image.load("ChessArt/red_square.png")
+        self.blue_square_ = pygame.image.load("ChessArt/blue_square.png")
+
         self.screen_ = pygame.display.set_mode([620, 620])
         pygame.display.set_icon(self.black_king_)
         pygame.display.set_caption('Verbally Controlled Chess')
@@ -102,6 +105,12 @@ class GUI(object):
                     pass
                 else:
                     self.screen_.blit(self.figure(temp_board[row][column]), (b, a))
+
+    def paint_field(self, idx, color):
+        if color == "red":
+            self.screen_.blit(self.red_square_, idx)
+        elif color == "blue":
+            self.screen_.blit(self.blue_square_, idx)
 
     def load_texture(self):
         self.screen_.fill((0, 0, 0))

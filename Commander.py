@@ -25,7 +25,7 @@ class Commander(object):
 
             # making move
             if keyboard.is_pressed('space'):
-                self.chess_engine_.move()
+                 self.chess_engine_.move()
 
             # texture
             if not END:
@@ -67,5 +67,3 @@ class Commander(object):
                 self.gui_.update_screen()
                 time.sleep(1)
 
-            self.chess_engine_.from_where_ = ''
-            self.chess_engine_.to_where_ = []

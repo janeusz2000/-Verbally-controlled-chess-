@@ -132,39 +132,39 @@ class ChessConverter(object):
     def convert_field_for_gui(self, c):
         X = 0
         Y = 0
-        if c[1] == 8:
+        if c[1] == '8':
             X = 0
-        elif c[1] == 7:
+        elif c[1] == '7':
             X = 1
-        elif c[1] == 6:
+        elif c[1] == '6':
             X = 2
-        elif c[1] == 5:
+        elif c[1] == '5':
             X = 3
-        elif c[1] == 4:
+        elif c[1] == '4':
             X = 4
-        elif c[1] == 3:
+        elif c[1] == '3':
             X = 5
-        elif c[1] == 2:
+        elif c[1] == '2':
             X = 6
-        elif c[1] == 1:
+        elif c[1] == '1':
             X = 7
         if c[0]=="a":
-            Y = 7
-        elif c[0]=="b":
-            Y = 6
-        elif c[0]=="c":
-            Y = 5
-        elif c[0]=="d":
-            Y = 4
-        elif c[0]=="e":
-            Y = 3
-        elif c[0]=="f":
-            Y = 2
-        elif c[0]=="g":
-            Y = 1
-        elif c[0]=="h":
             Y = 0
-        wsp = [(X*75+20), (Y*75+20)]
+        elif c[0]=="b":
+            Y = 1
+        elif c[0]=="c":
+            Y = 2
+        elif c[0]=="d":
+            Y = 3
+        elif c[0]=="e":
+            Y = 4
+        elif c[0]=="f":
+            Y = 5
+        elif c[0]=="g":
+            Y = 6
+        elif c[0]=="h":
+            Y = 7
+        wsp = [(Y*75+20), (X*75+20)]
         return wsp
         # Pole A7(2 * 75 + 20, 1 * 75 + 20)
         # Pole A8 (1 * 75 + 20, 1 * 75 + 20)

@@ -24,20 +24,21 @@ class ChessEngine:
         self.to_where_ = []
 
     def move(self):
-
         print(self.board_.legal_moves)
         self.listener_.listen()
         move = self.listener_.move_
         if self.listener_.checking_:
             try:
                 print(move)
-                self.to_where_ = move
+                self.from_where_ = move
                 self.checking_moves(move)
                 self.listener_.checking_ = False
             except ValueError:
                 winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
         else:
             if move != '':
+                self.from_where_ = ''
+                self.to_where_ = []
                 try:
                     print(move)
                     self.board_.push_san(move)

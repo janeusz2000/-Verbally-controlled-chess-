@@ -46,7 +46,6 @@ class Commander(object):
                         self.gui_.paint_field(self.converter_.convert_field_for_gui(move), "blue")
                 self.gui_.paint_figures(temp)
 
-
             # decreasing CPU usage
             self.gui_.clock()
 

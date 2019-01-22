@@ -11,7 +11,6 @@ class ChessEngine:
 
     def __init__(self, manual_input):
         self.board_ = chess.Board()
-
         self.stalemate_ = False
         self.draw_ = False
         self.mate_ = False
@@ -27,6 +26,7 @@ class ChessEngine:
         print(self.board_.legal_moves)
         self.listener_.listen()
         move = self.listener_.move_
+
         if self.listener_.checking_:
             try:
                 print(move)
@@ -48,10 +48,12 @@ class ChessEngine:
                 except ValueError:
                     winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
 
+
     def console_view(self):
         print(self.board_)
 
     def console_move(self):
+
         print(self.board_.legal_moves)
         try:
             self.board_.push_san(input("Please make a move: "))

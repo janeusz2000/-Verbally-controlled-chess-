@@ -8,7 +8,7 @@ class Instructions(object):
         self.file_ = f
         self.title_ = t
         self.tk_ = tkinter.Tk()
-        self.tk_.title()
+        self.tk_.title("Instrukcje gry")
         self.var_ = tkinter.StringVar()
         self.label_ = tkinter.Message(self.tk_, textvariable=self.var_)
         file = open(self.file_, mode='r')

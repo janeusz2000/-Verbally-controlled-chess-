@@ -30,7 +30,7 @@ class Listener(object):
             if self.message_ == "otwórz instrukcje" or self.message_ == "pokaż instrukcje":
                 instructions.show_instructions()
             elif self.message_ == "poddaję się" or self.message_ == "poddaj się" \
-                    or self.message_ == "zakończ grę" or self.message_ == "koniec gry" or self.message_ == "koniec":
+                    or self.message_ == "zakończ grę" or self.message_ == "koniec gry":
                 sys.exit(1)
             elif self.message_ == "repeat":
                 winsound.PlaySound("repeat_pl.wav", winsound.SND_FILENAME)

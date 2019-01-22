@@ -163,23 +163,21 @@ class ChessConverter(object):
             X = 6
         elif c[1] == '1':
             X = 7
-        if c[0]=="a":
+        if c[0] == "a":
             Y = 0
-        elif c[0]=="b":
+        elif c[0] == "b":
             Y = 1
-        elif c[0]=="c":
+        elif c[0] == "c":
             Y = 2
-        elif c[0]=="d":
+        elif c[0] == "d":
             Y = 3
-        elif c[0]=="e":
+        elif c[0] == "e":
             Y = 4
-        elif c[0]=="f":
+        elif c[0] == "f":
             Y = 5
-        elif c[0]=="g":
+        elif c[0] == "g":
             Y = 6
-        elif c[0]=="h":
+        elif c[0] == "h":
             Y = 7
         wsp = [(Y*75+20), (X*75+20)]
         return wsp
-        # Pole A7(2 * 75 + 20, 1 * 75 + 20)
-        # Pole A8 (1 * 75 + 20, 1 * 75 + 20)

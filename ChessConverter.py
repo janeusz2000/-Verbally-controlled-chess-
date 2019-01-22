@@ -28,25 +28,40 @@ class ChessConverter(object):
                     converted += 'K'
                 elif command[0] == "pionek":
                     converted = converted
-                if len(command) >= 4:
-                    if command[3] == "zbij" or command[3] == "bije" or command[3] == "bij" or command[3] == "zbija":
-                        if command[1] == "a":
-                            converted += 'a'
-                        elif command[1] == "be":
-                            converted += 'b'
-                        elif command[1] == "ce":
-                            converted += 'c'
-                        elif command[1] == "de":
-                            converted += 'd'
-                        elif command[1] == "e":
-                            converted += 'e'
-                        elif command[1] == "ef":
-                            converted += 'f'
-                        elif command[1] == "gie":
-                            converted += 'g'
-                        elif command[1] == "ha":
-                            converted += 'h'
-                        converted += "x"
+                if len(command) >= 2:
+                    if command[1] == "a":
+                        converted += 'a'
+                    elif command[1] == "be":
+                        converted += 'b'
+                    elif command[1] == "ce":
+                        converted += 'c'
+                    elif command[1] == "de":
+                        converted += 'd'
+                    elif command[1] == "e":
+                        converted += 'e'
+                    elif command[1] == "ef":
+                        converted += 'f'
+                    elif command[1] == "gie":
+                        converted += 'g'
+                    elif command[1] == "ha":
+                        converted += 'h'
+                if len(command) >= 3:
+                    if command[2] == "jeden":
+                        converted += "1"
+                    if command[2] == "dwa":
+                        converted += "2"
+                    if command[2] == "trzy":
+                        converted += "3"
+                    if command[2] == "cztery":
+                        converted += "4"
+                    if command[2] == "pięć":
+                        converted += "5"
+                    if command[2] == "sześć":
+                        converted += "6"
+                    if command[2] == "siedem":
+                        converted += "7"
+                    if command[2] == "osiem":
+                        converted += "8"
                 if len(command) >= 5:
                     if command[4] == "a":
                         converted += 'a'

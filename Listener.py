@@ -21,6 +21,7 @@ class Listener(object):
     # temporary managing to end program
     def listen(self):
         instructions = Instructions.Instructions("instructions_pl.txt", "instrukcje gry")
+
         try:
             self.move_ = ''
             os.system('python run_sarmata.py')
@@ -43,8 +44,11 @@ class Listener(object):
             else:
                 self.move_ = self.converter_.convert(c=self.message_)
             f.close()
+
         except:
-            pass
+            if self.message_ == "poddaję się" or self.message_ == "poddaj się" \
+                    or self.message_ == "zakończ grę" or self.message_ == "koniec gry" or self.message_ == "koniec":
+                sys.exit(1)
 
     def exit_game(self):
         self.exit_game_ = True

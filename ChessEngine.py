@@ -10,7 +10,9 @@ class ChessEngine:
     # constructor
 
     def __init__(self, manual_input):
-        self.board_ = chess.Board("rnbq1bnr/pppPk1pp/8/8/8/4p3/PPP2PPP/RNBQKBNR w KQ - 1 6")
+        # "rnbq1bnr/pppPk1pp/8/8/8/4p3/PPP2PPP/RNBQKBNR w KQ - 1 6"
+
+        self.board_ = chess.Board()
         self.stalemate_ = False
         self.draw_ = False
         self.mate_ = False
@@ -99,11 +101,11 @@ class ChessEngine:
         self.to_where_ = list_of_moves
 
     def is_end_of_board(self):
-        moves = self.board_.legal_moves
-        move_ = self.listener_.move_
-        move_.replace(move_[1], "x")
         change = False
+        move_ = self.listener_.move_
         if len(move_) == 4:
+            moves = self.board_.legal_moves
+            move_.replace(move_[1], "x")
             for move in moves:
                 if move_ in move.uci():
                     winsound.PlaySound("ask_for_figure_pl.wav", winsound.SND_FILENAME)

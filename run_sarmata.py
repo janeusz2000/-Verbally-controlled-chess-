@@ -8,6 +8,7 @@ from address_provider import AddressProvider
 from os.path import join as opjoin
 import sys
 import SarmataArgs
+import winsound
 
 if __name__ == '__main__':
     grammar_file = "grammars/szachyy.abnf"
@@ -49,6 +50,7 @@ if __name__ == '__main__':
             min_dif = float(f_min_dif.read())
             f_result = open("result.txt", "w+")
             f_result.write('')
+            winsound.PlaySound("ring2.wav", winsound.SND_FILENAME)
             session_id = stream.session_id()
             settings.set_session_id(session_id)
             results = recognizer.recognize(stream, settings)

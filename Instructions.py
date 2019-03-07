@@ -18,22 +18,23 @@ class Instructions(object):
         self.label_.pack()
 
     def quit(self, event=None):
-        while True:  # making a loop
-            os.system('python run_sarmata.py')
-            f = open("result.txt", "r")
-            command = f.read()
-            f.close()
-            if command == "zamknij instrukcje":
-                self.tk_.destroy()
-                break
-            elif command == "repeat":
-                winsound.PlaySound("repeat_pl.wav", winsound.SND_FILENAME)
-                continue
-            elif command == "":
-                break
-            else:
-                continue
+        # while True:  # making a loop
+        os.system('python run_sarmata.py')
+        f = open("result.txt", "r")
+        command = f.read()
+        f.close()
+        if command == "zamknij instrukcje":
+            self.tk_.destroy()
+            # break
+        elif command == "repeat":
+            winsound.PlaySound("repeat_pl.wav", winsound.SND_FILENAME)
+            # continue
+        # elif command == "":
+        #     break
+        # else:
+        #     continue
 
     def show_instructions(self):
         self.tk_.bind("<space>", self.quit)
         self.tk_.mainloop()
+

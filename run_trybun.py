@@ -6,10 +6,10 @@ from address_provider import AddressProvider
 
 if __name__ == '__main__':
     # Config:
-    output_wave_file = "ask_for_figure_pl.wav"
+    output_wave_file = "dddd.wav"
     ap = AddressProvider()
     address = ap.get("tribune")
     sampling_rate = 44100
-    input_text = "Podaj figurę, na którą chcesz zamienić pionka."
+    input_text = ""
 
     call_synthesize(address, input_text, output_wave_file, sampling_rate)

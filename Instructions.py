@@ -37,5 +37,3 @@ class Instructions(object):
     def show_instructions(self):
         self.tk_.bind("<space>", self.quit)
         self.tk_.mainloop()
-
-

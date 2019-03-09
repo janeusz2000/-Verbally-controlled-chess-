@@ -13,7 +13,7 @@ class Commander(object):
 
     # constructor
     def __init__(self):
-        self.instructions_ = Instructions.Instructions("instructions_pl.txt", "instrukcje gry")
+        self.instructions_ = Instructions.Instructions("instructions_pl.txt", "Instrukcje gry")
         self.instructions_.show_instructions()
         self.chess_engine_ = ChessEngine.ChessEngine(True)
         self.gui_ = GUI.GUI()

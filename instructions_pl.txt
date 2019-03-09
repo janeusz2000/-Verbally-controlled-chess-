@@ -13,7 +13,7 @@ Aby wykonaæ ruch naciœnij spacjê a nastêpnie wydaj komendê zgodnie z poni¿szymi 
   Jeœli chcesz wykonaæ roszadê powiedz: 'Roszada w stronê króla/królowej'
 4.Zakoñczenie gry
   Aby zakoñczyæ grê nale¿y powiedzieæ jedno z poni¿szych:
-  'Zakoñcz grê', 'Koniec gry', 'Koniec', 'Poddajê siê', 'Poddaj siê'.
+  'Zakoñcz grê', 'Koniec gry', 'Poddajê siê', 'Poddaj siê'.
 5.Instrukcje
   Aby ponownie w³¹czyæ instrukcje gry u¿yj komendy: "Poka¿ instrukcje" lub "Otwórz instrukcje". 
   Aby je wy³¹czyæ u¿yj komendy: "Zamknij instrukcje".

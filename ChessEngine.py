@@ -21,12 +21,12 @@ class ChessEngine:
         self.ending_ = None
         self.from_where_ = ''
         self.to_where_ = []
+        self.instruction = False
 
     def move(self):
         print(self.board_.legal_moves)
         self.listener_.listen()
         move = self.listener_.move_
-
         if self.listener_.checking_:
             try:
                 print(move)
@@ -35,8 +35,13 @@ class ChessEngine:
                 self.listener_.checking_ = False
             except ValueError:
                 winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
+                return False
         else:
-            if move != '':
+            if move == 39:
+                self.instruction = True
+            elif move == 40:
+                self.instruction = False
+            elif move != '':
                 self.from_where_ = ''
                 self.to_where_ = []
                 try:
@@ -45,8 +50,11 @@ class ChessEngine:
                     self.listener_.move_ = ''
                     if self.board_.is_check():
                         winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
+
+                    return False
                 except ValueError:
                     winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
+                    return False
 
 
     def console_view(self):
@@ -54,11 +62,19 @@ class ChessEngine:
 
     def console_move(self):
 
-        print(self.board_.legal_moves)
-        try:
-            self.board_.push_san(input("Please make a move: "))
-        except ValueError:
-            print("illegal move")
+        move = self.listener_.move_
+        if move == 39:
+            self.instruction = True
+        elif move == 40:
+            self.instruction = False
+        else:
+            print(self.board_.legal_moves)
+            try:
+                self.board_.push_san(input("Please make a move: "))
+
+            except ValueError:
+                print("illegal move")
+
 
     def checking_all_ends(self):
 

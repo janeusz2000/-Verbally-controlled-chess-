@@ -24,10 +24,9 @@ class Commander(object):
         while True:
 
             # making move
-            #self.chess_engine_.console_view()
-            #self.chess_engine_.console_move()
+
             if keyboard.is_pressed('space'):
-                 self.chess_engine_.move()
+                self.chess_engine_.move()
 
             # texture
             if not END:
@@ -50,6 +49,10 @@ class Commander(object):
 
             # decreasing CPU usage
             self.gui_.clock()
+
+            # instructions
+            if self.chess_engine_.instructions_:
+                self.gui_.instructions()
 
             # flip display
             self.gui_.display_flip()

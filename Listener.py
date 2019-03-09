@@ -20,7 +20,6 @@ class Listener(object):
 
     # temporary managing to end program
     def listen(self):
-        instructions = Instructions.Instructions("instructions_pl.txt", "instrukcje gry")
 
         try:
             self.move_ = ''
@@ -28,7 +27,9 @@ class Listener(object):
             f = open("result.txt", "r")
             self.message_ = f.read()
             if self.message_ == "otwórz instrukcje" or self.message_ == "pokaż instrukcje":
-                instructions.show_instructions()
+                return 39
+            elif self.message == "zamknij instrukcje" or self.message_ == "koniec instrukcji":
+                return 40
             elif self.message_ == "poddaję się" or self.message_ == "poddaj się" \
                     or self.message_ == "zakończ grę" or self.message_ == "koniec gry" or self.message_ == "koniec":
                 sys.exit(1)

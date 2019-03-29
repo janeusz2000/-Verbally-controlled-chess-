@@ -12,7 +12,7 @@ class SarmataArgs:
     grammar_name = ''                   # Name (ID) of the grammar in the service's grammar cache.
     grammar = None                      # SRGS grammar file (ABNF or XML format accepted).
     max_alternatives = 3                # Maximum number of recognition hypotheses to be returned.
-    mic = True                        # Use microphone as an audio source (instead of wave file).
+    mic = True                       # Use microphone as an audio source (instead of wave file).
     no_input_timeout = 2000             # MRCP v2 no input timeout [ms].
     no_match_threshold = 0.2            # Confidence acceptance threshold.
     recognition_timeout = 6000         # MRCP v2 recognition timeout [ms].

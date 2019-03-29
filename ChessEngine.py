@@ -27,6 +27,8 @@ class ChessEngine:
         print(self.board_.legal_moves)
         self.listener_.listen()
         move = self.listener_.move_
+        print(move)
+        # move = self.check_with_legal_moves(move)
         if self.listener_.checking_:
             try:
                 print(move)
@@ -112,4 +114,151 @@ class ChessEngine:
             if from_where in move.uci():
                 list_of_moves.append(move.uci()[2:])
         self.to_where_ = list_of_moves
+
+    def check_one(self, move, index):
+        print("start of checking")
+        while True:
+            if move[index] == "a":
+                move[index] = "h"
+                if move in self.board_.legal_moves:
+                    print("success")
+                    break
+                else:
+                    move[index] = "e"
+                    if move in self.board_.legal_moves:
+                        print("success")
+                        break
+                    else:
+                        move[index] = "a"
+            elif move[index] == "b":
+                move[index] = "d"
+                if move in self.board_.legal_moves:
+                    print("success")
+                    break
+                else:
+                    move[index] = "d"
+            elif move[index] == "d":
+                move[index] = "b"
+                if move in self.board_.legal_moves:
+                    print("success")
+                    break
+                else:
+                    move[index] = "b"
+            elif move[index] == "e":
+                move[index] = "f"
+                if move in self.board_.legal_moves:
+                    print("success")
+                    break
+                else:
+                    move[index] = "e"
+            elif move[index] == "f":
+                move[index] = "e"
+                if move in self.board_.legal_moves:
+                    print("success")
+                    break
+                else:
+                    move[index] = "f"
+            elif move[index] == "h":
+                move[index] = "a"
+                if move in self.board_.legal_moves:
+                    print("success")
+                    break
+                else:
+                    move[index] = "h"
+                    break
+            elif move[index] == "c":
+                print("checking not needed")
+                break
+        return move
+
+    def check_with_legal_moves(self, move):
+        while True:
+            if move not in self.board_.legal_moves:
+                if move[1] == "a":
+                    move[1] = "h"
+                    if move in self.board_.legal_moves:
+                        print("success")
+                        break
+                    else:
+                        move = self.check_one(move, 3)
+                        if move in self.board_.legal_moves:
+                            print("success")
+                            break
+                        else:
+                            move[1] = "e"
+                            if move in self.board_.legal_moves:
+                                print("success")
+                                break
+                            else:
+                                move = self.check_one(move, 3)
+                                if move in self.board_.legal_moves:
+                                    print("success")
+                                    break
+                                else:
+                                    move[1] = "a"
+                elif move[1] == "b":
+                    move[1] = "d"
+                    if move in self.board_.legal_moves:
+                        print("success")
+                        break
+                    else:
+                        move = self.check_one(move, 3)
+                        if move in self.board_.legal_moves:
+                            print("success")
+                            break
+                        else:
+                            move[1] = "b"
+                elif move[1] == "d":
+                    move[1] = "b"
+                    if move in self.board_.legal_moves:
+                        print("success")
+                        break
+                    else:
+                        move = self.check_one(move, 3)
+                        if move in self.board_.legal_moves:
+                            print("success")
+                            break
+                        else:
+                            move[1] = "d"
+                elif move[1] == "e":
+                    move[1] = "f"
+                    if move in self.board_.legal_moves:
+                        print("success")
+                        break
+                    else:
+                        move = self.check_one(move, 3)
+                        if move in self.board_.legal_moves:
+                            print("success")
+                            break
+                        else:
+                            move[1] = "e"
+                elif move[1] == "f":
+                    move[1] = "e"
+                    if move in self.board_.legal_moves:
+                        print("success")
+                        break
+                    else:
+                        move = self.check_one(move, 3)
+                        if move in self.board_.legal_moves:
+                            print("success")
+                            break
+                        else:
+                            move[1] = "f"
+                elif move[1] == "h":
+                    move[1] = "a"
+                    if move in self.board_.legal_moves:
+                        print("success")
+                        break
+                    else:
+                        move = self.check_one(move, 3)
+                        if move in self.board_.legal_moves:
+                            print("success")
+                            break
+                        else:
+                            move[1] = "h"
+                elif move[1] == "c":
+                    print("checking not needed")
+                else:
+                    self.check_one(move, 3)
+        return move
 

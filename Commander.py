@@ -51,8 +51,8 @@ class Commander(object):
             self.gui_.clock()
 
             # instructions
-            if self.chess_engine_.instructions_:
-                self.gui_.instructions()
+            #if self.chess_engine_.instructions_:
+                #self.gui_.instructions()
 
             # flip display
             self.gui_.display_flip()

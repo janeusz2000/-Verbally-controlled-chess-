@@ -55,7 +55,9 @@ if __name__ == '__main__':
             settings.set_session_id(session_id)
             results = recognizer.recognize(stream, settings)
             [results_speech, results_rr] = print_results(results, stream)
+
             result = results_speech[results_rr.index(max(results_rr))]
+
             if len(results_rr) >= 1:
                 if results_rr.index(max(results_rr)) == 0:
                     if len(results_rr) >= 2:
@@ -75,6 +77,7 @@ if __name__ == '__main__':
                 if results_rr.index(max(results_rr)) == 2:
                     if max(results_rr) - results_rr[1] <= min_dif or max(results_rr) - results_rr[0] <= min_dif:
                         result = "repeat"
+
             f_result.write(result)
             f_result.close()
             print(result)

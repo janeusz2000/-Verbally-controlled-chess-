@@ -48,7 +48,7 @@ class Listener(object):
 
         except:
             if self.message_ == "poddaję się" or self.message_ == "poddaj się" \
-                    or self.message_ == "zakończ grę" or self.message_ == "koniec gry" or self.message_ == "koniec":
+                    or self.message_ == "zakończ grę" or self.message_ == "koniec gry":
                 sys.exit(1)
 
     def exit_game(self):

@@ -29,7 +29,6 @@ class GUI(object):
         self.blue_square_ = pygame.image.load("ChessArt/blue_square.png")
 
         self.screen_ = pygame.display.set_mode([620, 620])
-        self.instructions_ = pygame.image.load("ChessArt/instructions.png")
         pygame.display.set_icon(self.black_king_)
         pygame.display.set_caption('Verbally Controlled Chess')
 
@@ -130,9 +129,6 @@ class GUI(object):
         path = 'ChessArt/'+name+'.png'
         self.screen_.fill((0, 0, 0))
         self.screen_.blit(pygame.image.load(path).convert(), (0, 0))
-
-    def instructions(self):
-        self.screen_blit(self.instructions(), (0, 0))
 
     @staticmethod
     def check_events():

@@ -48,7 +48,11 @@ class ChessEngine:
                     if self.board_.is_check():
                         winsound.PlaySound("check_pl.wav", winsound.SND_FILENAME)
                 except ValueError:
-                    if self.is_end_of_board() == False:
+                    try:
+                        self.from_where_ = move
+                        self.checking_moves(move)
+                        self.listener_.checking_ = False
+                    except ValueError:
                         winsound.PlaySound("wrong_move_pl.wav", winsound.SND_FILENAME)
 
     def console_view(self):
@@ -166,6 +170,8 @@ class ChessEngine:
             return False
 
     def checking_moves(self, from_where):
+        if len(from_where) != 2:
+            from_where = from_where[-2:]
         moves = self.board_.legal_moves
         list_of_moves = []
         for move in moves:

@@ -119,9 +119,6 @@ class GUI(object):
     def update_screen(self):
         pygame.display.update()
 
-    def instructions(self):
-        print("jaaa")
-
     def clock(self):
         self.clock_.tick(60)
 

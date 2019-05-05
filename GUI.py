@@ -119,9 +119,6 @@ class GUI(object):
     def update_screen(self):
         pygame.display.update()
 
-    def instructions(self):
-        print("jaaa")
-
     def clock(self):
         self.clock_.tick(60)
 
@@ -129,6 +126,9 @@ class GUI(object):
         path = 'ChessArt/'+name+'.png'
         self.screen_.fill((0, 0, 0))
         self.screen_.blit(pygame.image.load(path).convert(), (0, 0))
+
+    def instructions(self):
+        self.screen_.blit(pygame.image.load('ChessArt/instructions.png').convert(), (0, 0))
 
     @staticmethod
     def check_events():

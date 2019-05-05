@@ -24,6 +24,9 @@ class ChessEngine:
         self.from_where_ = ''
         self.to_where_ = []
 
+        self.instructions_ = True
+
+
     def move(self):
         print(self.board_.legal_moves)
         self.listener_.listen()
@@ -59,7 +62,6 @@ class ChessEngine:
         print(self.board_)
 
     def console_move(self):
-
         print(self.board_.legal_moves)
         try:
             self.board_.push_san(input("Please make a move: "))
@@ -138,7 +140,6 @@ class ChessEngine:
             if self.is_move_legal(move_list, moves) == True:
                 break
         return move
-
 
     def checking_all_ends(self):
 

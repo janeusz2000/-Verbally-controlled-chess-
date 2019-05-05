@@ -14,7 +14,6 @@ class Commander(object):
     # constructor
     def __init__(self):
         self.instructions_ = Instructions.Instructions("instructions_pl.txt", "Instrukcje gry")
-        self.instructions_.show_instructions()
         self.chess_engine_ = ChessEngine.ChessEngine(True)
         self.gui_ = GUI.GUI()
         self.converter_ = ChessConverter.ChessConverter()
@@ -51,8 +50,9 @@ class Commander(object):
             self.gui_.clock()
 
             # instructions
-            #if self.chess_engine_.instructions_:
-                #self.gui_.instructions()
+
+            if keyboard.is_pressed('i'):
+                self.gui_.instructions()
 
             # flip display
             self.gui_.display_flip()

@@ -50,8 +50,10 @@ class Commander(object):
             self.gui_.clock()
 
             # instructions
-            if keyboard.is_pressed('i'):
+
+            if self.chess_engine_.instructions_:
                 self.gui_.instructions()
+
 
             # flip display
             self.gui_.display_flip()

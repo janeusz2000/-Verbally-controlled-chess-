@@ -51,9 +51,8 @@ class Commander(object):
 
             # instructions
 
-            if self.chess_engine_.instructions_:
+            if keyboard.is_pressed('i'):
                 self.gui_.instructions()
-
 
             # flip display
             self.gui_.display_flip()

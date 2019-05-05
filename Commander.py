@@ -25,7 +25,7 @@ class Commander(object):
             # making move
 
             if keyboard.is_pressed('space'):
-                self.chess_engine_.console_move()
+                self.chess_engine_.move()
 
             # texture
             if not END:

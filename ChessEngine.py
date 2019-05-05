@@ -21,7 +21,7 @@ class ChessEngine:
         self.ending_ = None
         self.from_where_ = ''
         self.to_where_ = []
-        self.instruction = False
+        self.instructions_ = False
 
     def move(self):
         print(self.board_.legal_moves)
@@ -74,7 +74,6 @@ class ChessEngine:
 
             except ValueError:
                 print("illegal move")
-
 
     def checking_all_ends(self):
 

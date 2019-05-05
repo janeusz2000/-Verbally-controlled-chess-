@@ -14,7 +14,6 @@ class Commander(object):
     # constructor
     def __init__(self):
         self.instructions_ = Instructions.Instructions("instructions_pl.txt", "Instrukcje gry")
-        self.instructions_.show_instructions()
         self.chess_engine_ = ChessEngine.ChessEngine(True)
         self.gui_ = GUI.GUI()
         self.converter_ = ChessConverter.ChessConverter()
@@ -26,7 +25,7 @@ class Commander(object):
             # making move
 
             if keyboard.is_pressed('space'):
-                self.chess_engine_.move()
+                self.chess_engine_.console_move()
 
             # texture
             if not END:
@@ -51,7 +50,7 @@ class Commander(object):
             self.gui_.clock()
 
             # instructions
-            if self.chess_engine_.instructions_:
+            if keyboard.is_pressed('i'):
                 self.gui_.instructions()
 
             # flip display

@@ -132,7 +132,7 @@ class GUI(object):
         self.screen_.blit(pygame.image.load(path).convert(), (0, 0))
 
     def instructions(self):
-        self.screen_blit(self.instructions(), (0, 0))
+        self.screen_.blit(pygame.image.load('ChessArt/instructions.png').convert(), (0, 0))
 
     @staticmethod
     def check_events():
